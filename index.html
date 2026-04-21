@@ -441,7 +441,7 @@
     // En este arreglo voy a guardar los posts ya armados
     var arregloConTodasLasPublicaciones = [];
 
-    // Este es el dibujo del monito hecho con letras (SVG)
+    // Este es el dibujo de la personita hecha con letras
     var codigoDibujoMonito = `
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dibujito-svg" style="width:100%; height:100%;">
                 <circle cx="12" cy="7" r="4"></circle>
@@ -521,7 +521,7 @@
         }
     }
 
-    // Esta funcion me costo entenderla pero sirve para mezclar las cosas al azar (como barajar cartas)
+    // Esta funcion nos costo entenderla pero sirve para mezclar las cosas al azar (como barajar cartas)
     function revolverElArreglo(arregloParaMezclar) {
         var posicionActual = arregloParaMezclar.length;
         var valorTemporal;
@@ -547,7 +547,7 @@
         }
     }
 
-    // Esta funcion decide si se dibuja foto real o el monito por defecto
+    // Esta funcion decide si se dibuja foto real o la personita por defecto
     function obtenerAvatarHTML(usuario, ancho, alto) {
         if (usuario && usuario.idPersonal === 1) {
             return `<img src="Fotos_Perfil_Conecta_Plus/Administrador.png" alt="Foto de perfil de ` + usuario.nombreLargo + `" class="imagen-foto-perfil">`;
@@ -599,7 +599,7 @@
                 `;
         }
 
-        // Armo la tarjeta completa
+        // Armamos la tarjeta completa
         var tarjetaHTMLCompleta = `
                 <div class="tarjetita-de-publicacion">
                     <div class="parte-de-arriba-publicacion" onclick="mostrarElPerfil(` + personaDueña.idPersonal + `)">
@@ -627,7 +627,7 @@
     // Funcion para cargar el inicio de la red social
     function mostrarElInicio() {
         var elEspacioCentral = document.getElementById('zona-principal-html');
-        elEspacioCentral.innerHTML = ""; // Limpio la pantalla
+        elEspacioCentral.innerHTML = ""; // Limpiamos la pantalla
 
         // Barajeo para que no salgan en el mismo orden
         var publicacionesMezcladas = revolverElArreglo(arregloConTodasLasPublicaciones.slice());
